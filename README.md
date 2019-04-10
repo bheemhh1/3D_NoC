@@ -70,7 +70,7 @@ to use layers' default RC values (specified in .lcf file) for that block.
 
 
 -----------------------------------------------------------------------------------------------------
-### Extending BookSim2.0 and HotSpot6.0 for Power,   Performance and Thermal evaluation of 3D NoC Architectures
+### Extending BookSim2.0 and HotSpot6.0 for Power, Performance and Thermal evaluation of 3D NoC Architectures
 ( 3D NOC Power, Performance and Thermal analysis)
 
 -----------------------------------------------------------------------------------------------------
@@ -85,7 +85,7 @@ routing modules for 3D NoCs.
 -----------------------------------------------------------------------------------------------------
 The major extensions incorporated in HotSpot6.0 are: parameterized  2D router floorplan, 3D router floorplan including Through Silicon Vias (TSVs), power and thermal distribution models of 2D and 3D routers
 
-#### for more information check file Howt_3D_NoC.txt file 
+#### for more information check file Howt_3D_NoC file 
 
 ### Support or Contact
 
