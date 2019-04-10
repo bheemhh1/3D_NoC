@@ -85,7 +85,7 @@ routing modules for 3D NoCs.
 -----------------------------------------------------------------------------------------------------
 The major extensions incorporated in HotSpot6.0 are: parameterized  2D router floorplan, 3D router floorplan including Through Silicon Vias (TSVs), power and thermal distribution models of 2D and 3D routers
 
-#### for more information check file Howt_3D_NoC file 
+#### for more information check  : > Howt_3D_NoC file
 
 ### Support or Contact
 
