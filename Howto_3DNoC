@@ -1,0 +1,83 @@
+-----------------------------------------------------------------------------------------------------------
+Extending BookSim2.0 and HotSpot6.0 for Power, Performance and Thermal evaluation of 3D NoC Architectures
+-----------------------------------------------------------------------------------------------------------
+1. For power and performance evalution booksimis used.
+     -> The configuration file of 3D NoC Mesh and BFT topology are present in follwoing directory
+	-:3D_NoC/Booksim_3D_NoC/src/examples/3D_Mesh_BFT
+     --------------------------------------------------------------------
+     ->  For Mesh Config file : 
+     -----------------------------------------------------------------
+	-: 2DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m1
+		-------------------------------
+			topology = mesh;
+			k = 8; // xradix
+			n = 2; // dim
+			_x= 8; // xradix
+			_y= 8; // y radix
+			_z= 1; // z radix  for 2DMesh topology
+
+		-----------------------------------
+	-: 2-layer 3DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m2
+		------------------------------------
+			topology = mesh;
+			k = 4; // xradix
+			n = 3; // dim
+			_x= 4; // xradix
+			_y= 8; // y radix
+			_z= 2; // z radix for 2-layer 3DMesh topology
+		--------------------------------------
+	-: 4-layer 3DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m3
+		------------------------------------
+			topology = mesh;
+			k = 4; // xradix
+			n = 3; // dim
+			_x= 4; // xradix
+			_y= 4; // y radix
+			_z= 3; // z radix for 4-layer 3D topology
+	--------------------------------------------------------------------------------
+    ->  For BFT Config file : 
+	--------------------------------------------------------------------------------
+	-: 2DBFT:  src/examples/3D_Mesh_BFT/1_3D_Mesh/bft1
+		-------------------------------
+			topology = bft1;  for 2DBFT topology
+			subnets = 1;
+			c  = 4;
+			k  = 4;
+			n  = 3;
+			x  = 4;
+			y  = 4;
+			xr = 2;
+			yr = 2;
+
+		-----------------------------------
+	-: 2-layer 3DBFT:  src/examples/3D_Mesh_BFT/1_3D_BFT/m2
+		------------------------------------
+			topology = bft2;  for 2-layer 3DBFT topology
+			subnets = 1;
+			c  = 4;
+			k  = 4;
+			n  = 3;
+			x  = 4;
+			y  = 4;
+			xr = 2;
+			yr = 2;
+			
+		--------------------------------------
+	-: 4-layer 3DBFT:  src/examples/3D_Mesh_BFT/1_3D_BFT/m3
+		------------------------------------
+			topology = bft3;  for 4-layer 3DBFT topology
+			subnets = 1;
+			c  = 4;
+			k  = 4;
+			n  = 3;
+			x  = 4;
+			y  = 4;
+			xr = 2;
+			yr = 2;
+
+	--------------------------------------------------------------------------------
+
+
+
+
+		------------------------------------
