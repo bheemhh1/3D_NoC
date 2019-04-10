@@ -70,7 +70,8 @@ to use layers' default RC values (specified in .lcf file) for that block.
 
 
 -----------------------------------------------------------------------------------------------------
-### 3D NOC (Power, Performance and Thermal )  Extending BookSim2.0 and HotSpot6.0 for Power,   Performance and Thermal evaluation of 3D NoC Architectures
+### Extending BookSim2.0 and HotSpot6.0 for Power,   Performance and Thermal evaluation of 3D NoC Architectures
+( 3D NOC Power, Performance and Thermal analysis)
 
 -----------------------------------------------------------------------------------------------------
 3D NoC (BookSim) 
