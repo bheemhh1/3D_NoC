@@ -76,12 +76,19 @@ to use layers' default RC values (specified in .lcf file) for that block.
 
 
 ### 3D NOC (Power, Performance and Thermal )  Extending BookSim2.0 and HotSpot6.0 for Power,   Performance and Thermal evaluation of 3D NoC Architectures
+-----------------------------------------------------------------------------------------------------
+3D NoC (BookSim) 
+-----------------------------------------------------------------------------------------------------
+The major extensions incorporated in BookSim2.0 are: Through Silicon Via power and performance models, 
+3D topology construction modules, 3D Mesh topology construction using variable X,Y,Z radix, tailored 
+routing modules for 3D NoCs. 
 
-The major extensions incorporated in BookSim2.0 are: Through Silicon Via power and performance models, 3D topology construction modules, 3D Mesh topology construction using variable X,Y,Z radix, tailored routing modules for 3D NoCs. 
-
+-----------------------------------------------------------------------------------------------------
+3D NoC (Hotspot6.0)
+-----------------------------------------------------------------------------------------------------
 The major extensions incorporated in HotSpot6.0 are: parameterized  2D router floorplan, 3D router floorplan including Through Silicon Vias (TSVs), power and thermal distribution models of 2D and 3D routers
 
-# for more information check file Howt_3D_NoC.txt file 
+#### for more information check file Howt_3D_NoC.txt file 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
