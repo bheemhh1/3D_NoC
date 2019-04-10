@@ -1,5 +1,6 @@
+-----------------------------------------------------------------------------------------------------
 ## BookSim Interconnection Network Simulator
-
+-----------------------------------------------------------------------------------------------------
 You can use the [editor on GitHub](https://github.com/bheemhh1/3D_NoC/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 BookSim is a cycle-accurate interconnection network simulator. Originally developed for and introduced with the Principles and Practices of Interconnection Networks book(http://cva.stanford.edu/books/ppin/), its functionality has since been continuously extended. The current major release, BookSim 2.0, supports a wide range of topologies such as mesh, torus and flattened butterfly networks, provides diverse routing algorithms and includes numerous options for customizing the network's router microarchitecture.
@@ -7,9 +8,16 @@ BookSim is a cycle-accurate interconnection network simulator. Originally develo
 If you use BookSim in your research, we would appreciate the following citation in any publications to which it has contributed:
 
 Nan Jiang, Daniel U. Becker, George Michelogiannakis, James Balfour, Brian Towles, John Kim and William J. Dally. A Detailed and Flexible Cycle-Accurate Network-on-Chip Simulator. In Proceedings of the 2013 IEEE International Symposium on Performance Analysis of Systems and Software, 2013.
-### HotSpot 6.0
-HotSpot-6.0 Changes
--------------------
+
+-----------------------------------------------------------------------------------------------------
+## HotSpot 6.0
+-----------------------------------------------------------------------------------------------------
+HotSpot is a computationally efficient, architecture level thermal modeling
+infrastructure developed at the University of Virginia. It makes use of the
+duality that exists between the electrical and thermal properties of materials
+to model processor temperature. It is written in 'C' and can be easily
+interfaced with typical power/performance simulators available in the
+community. It can be downloaded from http://lava.cs.virginia.edu/HotSpot
 Contact: Runjie Zhang, runjie@virginia.edu
 
 The changes documented in this release are partly sponsored by 
@@ -18,32 +26,20 @@ under contract no. HR0011-13-C-0022.
 
 This release of HotSpot incorporates the following changes/improvements:
 
------------------------------------------------------------------------------------------------------
+
 1) Calibration and validation 
 -----------------------------------------------------------------------------------------------------
 - Acknowledgements: Pritish R. Parida at IBM and Pradip Bose at IBM
 
 Please refer to our technical report for more details.
 
------------------------------------------------------------------------------------------------------
+
 2) New Feature: Fast steady-state solver based on SuperLU.
 -----------------------------------------------------------------------------------------------------
 To speedup grid-mode's steady-state simulations, we implemented a new, direct solver based on SuperLU. 
 SuperLU is an open source library for the direct solution of large, sparse systems of 
 linear equations. Documentations, installation instructions and source code can be found here: 
 http://crd-legacy.lbl.gov/~xiaoye/SuperLU/
-
-How to Use :
------------
-a. Download and build SuplerLU.
-   SuperLU requires BLAS (Basic Linear Algebra Subprograms) library.
-   If libblas is not installed, here is a quick guide on how to
-   build one: http://www.giammy.com/phd/blas-lapack-howto.html
-b. Modify Makefile parameter SuperLUroot 
-   SuperLUroot = /path/to/your/build
-c. Build HotSpot with option SUPERLU=1
-   >> make SUPERLU=1
-d. Run HotSpot simulation. (Input and output files are same as before)
 
 According to our internal tests, this new direct solver could be 10x-100x faster than 
 the iterative solver used by previous versions of HotSpot. However, due to its large memory usage,
@@ -53,7 +49,7 @@ a. Grid size is relatively small. (e.g. no larger than 256x256 for a 4-layer 3D 
    If the host machine's memory is small (<8GB), even smaller grid-size is preferred.
 b. detailed_3D mode is enabled.
 
------------------------------------------------------------------------------------------------------
+
 3) New Feature: Support layers with non-uniform thermal resistivity and heat capacity.
 -----------------------------------------------------------------------------------------------------
 - By Ayse K. Coskun, Katsutoshi Kawakami, Daniel Rossell, and Samuel Howes at Boston University.
@@ -73,9 +69,9 @@ Note that specific-heat and resistivity are optional. Leaving them blank will fo
 to use layers' default RC values (specified in .lcf file) for that block. 
 
 
-
-
+-----------------------------------------------------------------------------------------------------
 ### 3D NOC (Power, Performance and Thermal )  Extending BookSim2.0 and HotSpot6.0 for Power,   Performance and Thermal evaluation of 3D NoC Architectures
+
 -----------------------------------------------------------------------------------------------------
 3D NoC (BookSim) 
 -----------------------------------------------------------------------------------------------------
