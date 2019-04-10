@@ -1,83 +1,127 @@
 -----------------------------------------------------------------------------------------------------------
 Extending BookSim2.0 and HotSpot6.0 for Power, Performance and Thermal evaluation of 3D NoC Architectures
 -----------------------------------------------------------------------------------------------------------
-1. For power and performance evalution booksimis used.
-     -> The configuration file of 3D NoC Mesh and BFT topology are present in follwoing directory
-	-:3D_NoC/Booksim_3D_NoC/src/examples/3D_Mesh_BFT
+1. For power and performance evaluation bookSim used.
+     1. The configuration file of 3D NoC Mesh and BFT topology are present in follwoing directory
+    -:3D_NoC/Booksim_3D_NoC/src/examples/3D_Mesh_BFT
      --------------------------------------------------------------------
-     ->  For Mesh Config file : 
+     2.  For Mesh Config file : 
      -----------------------------------------------------------------
-	-: 2DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m1
-		-------------------------------
-			topology = mesh;
-			k = 8; // xradix
-			n = 2; // dim
-			_x= 8; // xradix
-			_y= 8; // y radix
-			_z= 1; // z radix  for 2DMesh topology
+    -: 2DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m1
+        -------------------------------
+            topology = mesh;
+            k = 8; // xradix
+            n = 2; // dim
+            _x= 8; // xradix
+            _y= 8; // y radix
+            _z= 1; // z radix  for 2DMesh topology
 
-		-----------------------------------
-	-: 2-layer 3DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m2
-		------------------------------------
-			topology = mesh;
-			k = 4; // xradix
-			n = 3; // dim
-			_x= 4; // xradix
-			_y= 8; // y radix
-			_z= 2; // z radix for 2-layer 3DMesh topology
-		--------------------------------------
-	-: 4-layer 3DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m3
-		------------------------------------
-			topology = mesh;
-			k = 4; // xradix
-			n = 3; // dim
-			_x= 4; // xradix
-			_y= 4; // y radix
-			_z= 3; // z radix for 4-layer 3D topology
-	--------------------------------------------------------------------------------
-    ->  For BFT Config file : 
-	--------------------------------------------------------------------------------
-	-: 2DBFT:  src/examples/3D_Mesh_BFT/1_3D_Mesh/bft1
-		-------------------------------
-			topology = bft1;  for 2DBFT topology
-			subnets = 1;
-			c  = 4;
-			k  = 4;
-			n  = 3;
-			x  = 4;
-			y  = 4;
-			xr = 2;
-			yr = 2;
+        -----------------------------------
+    -: 2-layer 3DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m2
+        ------------------------------------
+            topology = mesh;
+            k = 4; // xradix
+            n = 3; // dim
+            _x= 4; // xradix
+            _y= 8; // y radix
+            _z= 2; // z radix for 2-layer 3DMesh topology
+        --------------------------------------
+    -: 4-layer 3DMesh:  src/examples/3D_Mesh_BFT/1_3D_Mesh/m3
+        ------------------------------------
+            topology = mesh;
+            k = 4; // xradix
+            n = 3; // dim
+            _x= 4; // xradix
+            _y= 4; // y radix
+            _z= 3; // z radix for 4-layer 3D topology
+    --------------------------------------------------------------------------------
+    3.  For BFT Config file : 
+    --------------------------------------------------------------------------------
+    -: 2DBFT:  src/examples/3D_Mesh_BFT/1_3D_Mesh/bft1
+        -------------------------------
+            topology = bft1;  for 2DBFT topology
+            subnets = 1;
+            c  = 4;
+            k  = 4;
+            n  = 3;
+            x  = 4;
+            y  = 4;
+            xr = 2;
+            yr = 2;
 
-		-----------------------------------
-	-: 2-layer 3DBFT:  src/examples/3D_Mesh_BFT/1_3D_BFT/m2
-		------------------------------------
-			topology = bft2;  for 2-layer 3DBFT topology
-			subnets = 1;
-			c  = 4;
-			k  = 4;
-			n  = 3;
-			x  = 4;
-			y  = 4;
-			xr = 2;
-			yr = 2;
-			
-		--------------------------------------
-	-: 4-layer 3DBFT:  src/examples/3D_Mesh_BFT/1_3D_BFT/m3
-		------------------------------------
-			topology = bft3;  for 4-layer 3DBFT topology
-			subnets = 1;
-			c  = 4;
-			k  = 4;
-			n  = 3;
-			x  = 4;
-			y  = 4;
-			xr = 2;
-			yr = 2;
+        -----------------------------------
+    -: 2-layer 3DBFT:  src/examples/3D_Mesh_BFT/1_3D_BFT/m2
+        ------------------------------------
+            topology = bft2;  for 2-layer 3DBFT topology
+            subnets = 1;
+            c  = 4;
+            k  = 4;
+            n  = 3;
+            x  = 4;
+            y  = 4;
+            xr = 2;
+            yr = 2;
+            
+        --------------------------------------
+    -: 4-layer 3DBFT:  src/examples/3D_Mesh_BFT/1_3D_BFT/m3
+        ------------------------------------
+            topology = bft3;  for 4-layer 3DBFT topology
+            subnets = 1;
+            c  = 4;
+            k  = 4;
+            n  = 3;
+            x  = 4;
+            y  = 4;
+            xr = 2;
+            yr = 2;
+    ------------------------------------------------
+    4. To run the 3D Mesh and BFT  Simulation  
+    --------------------------------------------
+     >First do Make in src directory
+     >Commands to execute the different topologies
+		1) ./booksim injection_rate=0.0001 examples/3D_Mesh_BFT/1_3D_Mesh/m1 > 2DMesh.txt
+		2) ./booksim injection_rate=0.0001 examples/3D_Mesh_BFT/1_3D_Mesh/m2 > 2L3DMesh.txt
+      		3) ./booksim injection_rate=0.0001 examples/3D_Mesh_BFT/1_3D_Mesh/m3 > 4L3DMesh.txt
+		4) ./booksim injection_rate=0.0001 examples/3D_Mesh_BFT/1_3D_BFT/b1 > 2DBFT.txt
+		5) ./booksim injection_rate=0.0001 examples/3D_Mesh_BFT/1_3D_BFT/b2 > 2L3DBFT.txt
+		6) ./booksim injection_rate=0.0001 examples/3D_Mesh_BFT/1_3D_BFT/b3 > 4L3DBFT.txt    
+    >re106.pl perl file for automated script for is  range of Injection and VC  values.
+====================================================================================================================================================
 
-	--------------------------------------------------------------------------------
+2. For HotSpot Support for 3D NoCs 
+    ##Topologies Supported:
+    - 3D Mesh
+    - 3D Mesh with router shifted to the center 
+    - 3D Butterfly Fat Tree
+    1. Use any of the .py files to generate the floorplan files(.flp) for any topology. Parameters concerning the number of cores per layer and the number of layers can be edited within the script. A corresponding power trace (.ptrace) file will also be generated. \
+    Note: To view a generated floorplan after running any .py script \
+    --------------------------------------------------------------------------------------
+        ./tofig.pl <floorplan filename>.flp  | fig2dev -L ps | ps2pdf - <output filename>.pdf
+    -------------------------------------------------------------------------------------
+    2. Edit any one of the layer configuration (NoC_x.lcf) files based on the number of layers generated from the python script as follows:\
+    Silicon_layer_0.flp \
+    Thermal_interface_layer_0.flp \
+    Silicon_layer_1.flp \
+    Thermal_interface_layer_1.flp \
+    . \
+    . \
+    Thermal_interface_layer_n-1.flp \
+    Silicon_layer_n.flp \
+    Thermal_Interface_Material.flp (Heat Sink)
+    -------------------------------------------------------------------------------------
+    3. To run the Hotspot Simulation  
+        ./hotspot -c hotspot.config -f <any .flp filename>.flp -p <generated ptrace filename>.ptrace -steady_file <min/max/avg/center>.steady -    model_type grid -detailed_3D on -grid_layer_file <NoC layer configuration filename>.lcf -grid_map_mode <min/max/avg/center> -grid_steady_file <min/max/avg/center>.grid.steady
 
+ 
+    Note: Ensure min/max/avg/center remains consistent across all filenames inorder to avoid confusion during experimentation. Also since detailed_3D is 'on', the argument passed under -f (floorplan file) does not matter as it will be overridden by the layer configuration file which contains the necessary floorplan files for the simulation.
+    -------------------------------------------------------------------------------------
+    4. To generate graphs of router temperatures after completing the simulation, run the following in the exact specified order: 
+        - python simplify.py
+        - python routerplot.py
+        - python plotstats.py \
+    Caution: The output filename within routerplot.py and input filename within plotstats.py should match
+    -------------------------------------------------------------------------------------
+    5. To Generate thermal heatmaps after completing the simulation, run: \
+        ./grid_thermal_map.pl <.flip filename> <min/max/avg/center>.grid.steady > <min/max/avg/center>.svg
 
-
-
-		------------------------------------
+====================================================================================================================================================
