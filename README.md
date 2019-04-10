@@ -72,76 +72,16 @@ the floorplan to have different heat capacitance and resistivity (see the exampl
 Note that specific-heat and resistivity are optional. Leaving them blank will force HotSpot 
 to use layers' default RC values (specified in .lcf file) for that block. 
 
-# Line Format: <unit-name> <width> <height> <left-x> <bottom-y> [<specific-heat>] [<resistivity>]
-Unit1	0.002000	0.002000	0.000000	0.000000	4e6	.02294
 
-How to Run :
------------
-Get steady-state temperature map:
->> ./hotspot -c hotspot.config -f <filename> -p <powerfile> -steady_file <steadyfile> \
-			 -model_type grid -detailed_3D on -grid_layer_file <lcffile> 
 
-Transient simulation with steady-state results as initial temperature:
->> ./hotspot -c hotspot.config -init_file <steadyfile> -f <filename> -p <powerfile> \
-			 -o <ttracefile> -model_type grid -detailed_3D on -grid_layer_file <lcffile>
 
-Notice that since .lcf is provided, the .flp file specified by -f option will be overridden.
+### 3D NOC (Power, Performance and Thermal )  Extending BookSim2.0 and HotSpot6.0 for Power,   Performance and Thermal evaluation of 3D NoC Architectures
 
-More detailed examples and instructions are available in subdirectory 3D_testcase.
+The major extensions incorporated in BookSim2.0 are: Through Silicon Via power and performance models, 3D topology construction modules, 3D Mesh topology construction using variable X,Y,Z radix, tailored routing modules for 3D NoCs. 
 
------------------------------------------------------------------------------------------------------
-4) Secondary heat transfer path compatible with 3D.
------------------------------------------------------------------------------------------------------
-Previous version does not support secondary heat transfer path when .lcf file is specified.
-This version relaxes this constraint and now secondary heat transfer path can be modeled along
-with 3D stacks. 
+The major extensions incorporated in HotSpot6.0 are: parameterized  2D router floorplan, 3D router floorplan including Through Silicon Vias (TSVs), power and thermal distribution models of 2D and 3D routers
 
------------------------------------------------------------------------------------------------------
-5) Script to plot 3D chip.
------------------------------------------------------------------------------------------------------
-This is also a contribution made by BU.
-
-3Dfig.pl has similar functionality to tofig.pl but instead reads in an .lcf files and creates a .FIG 
-file for each floorplan listed in the .lcf file. Additionally, it will show a unit's resistivity and 
-capacitance if it specified in the floorplan file. 
-
-3Dfig.pl must be used with Unix filetypes. To convert from a DOS file to unix, use the command 'dos2unix'.
-
--usage: 3Dfig.pl [-a <area ratio>] [-f <fontsize>] [-s <nskip>] <file>
-Reads in a layer configuration file and creates a .FIG file for each floorplan listed.
-Requires that all referenced files are in the same directory as 3Dfig.pl.
-[-a <area ratio>] -- approx page occupancy by figure (default 0.95)
-[-f <fontsize>]   -- font size to be used (default 10)
-[-s <nskip>]      -- no. of entries to be skipped in input (default 0)
-<file>            -- input .lcf file (eg: example.lcf)
-
-Alternatively, the command to convert 'example.lcf' into a PDF is 3Dfig.pl example.lcf | 3Dfig2pdf.sh output.pdf
-
------------------------------------------------------------------------------------------------------
-6) Discontinue the support for MS EXCEL interface
-----------------------------------------------------------------------------
-1. [Differentiating the roles of IR measurement and simulation for power and temperature-aware design](https://ieeexplore.ieee.org/document/4919633)
-2. [ORION 2.0: A fast and accurate NoC power and area model for early-stage design space exploration](https://ieeexplore.ieee.org/document/5090700)
-3. [SPEC CPU2000: measuring CPU performance in the New Millennium](https://ieeexplore.ieee.org/document/869367)
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
+# for more information check file Howt_3D_NoC.txt file 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
