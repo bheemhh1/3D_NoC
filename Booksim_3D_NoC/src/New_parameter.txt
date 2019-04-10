@@ -1,0 +1,4 @@
+New_Parameters
+====
+ "Temp_series_data" : stores the time series power data with file name TPtrace.txt(time interval is 1000cylces).
+ //_TPtrace = config.GetInt( "Temp_series_data");

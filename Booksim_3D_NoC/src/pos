@@ -1,0 +1,467 @@
+OVERRIDE Parameter: injection_rate=0.001
+BEGIN Configuration File: examples/b23
+
+
+// Copyright (c) 2007-2012, Trustees of The Leland Stanford Junior University
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation
+// and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+//A flattened butterfly configurate file with many tweaks from the
+//default settings. 
+
+
+// Flow control
+// Total number of VCs must match the above assignments
+num_vcs     = 8;
+vc_buf_size = 16;
+
+wait_for_tail_credit = 0;
+
+//
+// Router architectureq
+//
+vc_allocator = islip; 
+sw_allocator = islip;
+alloc_iters  = 1;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 1.0;
+
+//
+// Traffic
+//
+
+warmup_periods = 3;
+
+sample_period  = 10000;  
+
+sim_count          = 10;
+
+//traffic       = uniform;
+
+
+// 
+//
+// #node = k^(n+1)
+//
+// x, y, specifies the arrangement of routers in x and y dim
+// xr, yr specifiies the arayment of clients in a router
+//
+topology = bft23;
+subnets = 1;
+
+c  = 4;
+k  = 4;
+n  = 3;
+
+x  = 4;
+y  = 4;
+xr = 2;
+yr = 2;
+
+//
+// Routing		
+//
+
+routing_function = anca;
+
+//1: batch mode, 0: injection mode
+//use_read_write = 0;
+
+//for injection mode
+packet_size = 5;
+
+
+
+
+
+//latency: drains all packet, throughput:no drain?
+sim_type = latency;
+
+END Configuration File: examples/b23
+BFat Tree
+ k = 4 levels = 3
+ # of switches = 27
+ # of channels = 112
+ # of nodes ( size of network ) = 64
+number of nodes:6
+router_0_0ID:0degree4
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+0
+router_0_1ID:1degree4
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+1
+router_0_2ID:2degree4
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+2
+router_0_3ID:3degree4
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+3
+router_0_4ID:4degree4
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+4
+router_0_5ID:5degree4
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+5
+number of nodes:8
+router_1_0ID:6degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+6
+router_1_1ID:7degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+7
+router_1_2ID:8degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+8
+router_1_3ID:9degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+9
+router_1_4ID:10degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+10
+router_1_5ID:11degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+11
+router_1_6ID:12degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+12
+router_1_7ID:13degree5
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+13
+number of nodes:16
+router_2_0ID:14degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+14
+router_2_1ID:15degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+15
+router_2_2ID:16degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+16
+router_2_3ID:17degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+17
+router_2_4ID:18degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+18
+router_2_5ID:19degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+19
+router_2_6ID:20degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+20
+router_2_7ID:21degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+21
+router_2_8ID:22degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+22
+router_2_9ID:23degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+23
+router_2_10ID:24degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+24
+router_2_11ID:25degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+25
+router_2_12ID:26degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+26
+router_2_13ID:27degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+27
+router_2_14ID:28degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+28
+router_2_15ID:29degree6
+
+-- Orion 3 just provides power relations.
+
+--power initilized in router<< -------------------------
+29
+npos16
+14
+14
+added inject and eject at router pos0	0	inject port0
+14
+14
+added inject and eject at router pos0	1	inject port1
+14
+14
+added inject and eject at router pos0	2	inject port2
+14
+14
+added inject and eject at router pos0	3	inject port3
+15
+15
+added inject and eject at router pos1	0	inject port4
+15
+15
+added inject and eject at router pos1	1	inject port5
+15
+15
+added inject and eject at router pos1	2	inject port6
+15
+15
+added inject and eject at router pos1	3	inject port7
+16
+16
+added inject and eject at router pos2	0	inject port8
+16
+16
+added inject and eject at router pos2	1	inject port9
+16
+16
+added inject and eject at router pos2	2	inject port10
+16
+16
+added inject and eject at router pos2	3	inject port11
+17
+17
+added inject and eject at router pos3	0	inject port12
+17
+17
+added inject and eject at router pos3	1	inject port13
+17
+17
+added inject and eject at router pos3	2	inject port14
+17
+17
+added inject and eject at router pos3	3	inject port15
+18
+18
+added inject and eject at router pos4	0	inject port16
+18
+18
+added inject and eject at router pos4	1	inject port17
+18
+18
+added inject and eject at router pos4	2	inject port18
+18
+18
+added inject and eject at router pos4	3	inject port19
+19
+19
+added inject and eject at router pos5	0	inject port20
+19
+19
+added inject and eject at router pos5	1	inject port21
+19
+19
+added inject and eject at router pos5	2	inject port22
+19
+19
+added inject and eject at router pos5	3	inject port23
+20
+20
+added inject and eject at router pos6	0	inject port24
+20
+20
+added inject and eject at router pos6	1	inject port25
+20
+20
+added inject and eject at router pos6	2	inject port26
+20
+20
+added inject and eject at router pos6	3	inject port27
+21
+21
+added inject and eject at router pos7	0	inject port28
+21
+21
+added inject and eject at router pos7	1	inject port29
+21
+21
+added inject and eject at router pos7	2	inject port30
+21
+21
+added inject and eject at router pos7	3	inject port31
+22
+22
+added inject and eject at router pos8	0	inject port32
+22
+22
+added inject and eject at router pos8	1	inject port33
+22
+22
+added inject and eject at router pos8	2	inject port34
+22
+22
+added inject and eject at router pos8	3	inject port35
+23
+23
+added inject and eject at router pos9	0	inject port36
+23
+23
+added inject and eject at router pos9	1	inject port37
+23
+23
+added inject and eject at router pos9	2	inject port38
+23
+23
+added inject and eject at router pos9	3	inject port39
+24
+24
+added inject and eject at router pos10	0	inject port40
+24
+24
+added inject and eject at router pos10	1	inject port41
+24
+24
+added inject and eject at router pos10	2	inject port42
+24
+24
+added inject and eject at router pos10	3	inject port43
+25
+25
+added inject and eject at router pos11	0	inject port44
+25
+25
+added inject and eject at router pos11	1	inject port45
+25
+25
+added inject and eject at router pos11	2	inject port46
+25
+25
+added inject and eject at router pos11	3	inject port47
+26
+26
+added inject and eject at router pos12	0	inject port48
+26
+26
+added inject and eject at router pos12	1	inject port49
+26
+26
+added inject and eject at router pos12	2	inject port50
+26
+26
+added inject and eject at router pos12	3	inject port51
+27
+27
+added inject and eject at router pos13	0	inject port52
+27
+27
+added inject and eject at router pos13	1	inject port53
+27
+27
+added inject and eject at router pos13	2	inject port54
+27
+27
+added inject and eject at router pos13	3	inject port55
+28
+28
